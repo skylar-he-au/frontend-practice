@@ -1,0 +1,88 @@
+body {
+    font-size: 16px;
+    color: #333;
+}
+
+// nesting
+ul {
+    font-size: 16px;
+
+    li {
+        list-style: none;
+    }
+}
+
+// variables - _ 默认一样
+$primary-color: #555;
+$secondary-color: blue;
+$local-color: red;
+
+div.box {
+    background-color: $primary-color;
+    color: $local-color;
+
+    .child-box {
+        color: $local-color;
+    }
+}
+
+$primary-border: 1px solid $primary-color;
+
+h2.page-header {
+    border: $primary-border;
+}
+
+// nesting & 指向父选择器
+.nav {
+    height: 100px;
+
+    li {
+        padding: 5px;
+
+        a {
+            display: block;
+
+            &:hover {
+                background-color: blue;
+            }
+        }
+    }
+}
+
+// mixin
+@mixin alert {
+    color: #000;
+
+    a {
+        color: pink;
+    }
+}
+
+.alert-warming {
+    @include alert();
+}
+
+@mixin alert2($text-color, $backgroud) {
+    color: $text-color;
+    background-color: $backgroud;
+}
+
+.alert-info {
+    @include alert2(#333, blue)
+}
+
+// % placeholder selector
+%ir {
+    font-weight: bold;
+}
+
+.important-text {
+    @extend %ir
+}
+
+// partials @import
+@import 'base';
+
+h3 {
+    color: $color;
+}

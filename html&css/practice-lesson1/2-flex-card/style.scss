@@ -1,0 +1,68 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto");
+
+body {
+    font-family: "Roboto", sans-serif;
+}
+
+h1 {
+    color: #4181ee;
+    text-align: center;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+
+}
+
+.wrapper {
+    display: flex;
+    flex-wrap: wrap;
+
+    .card {
+        max-width: 300px;
+        min-height: 250px;
+        background-color: aquamarine;
+        box-sizing: border-box;
+        color: #fff;
+        padding: 30px;
+        margin: 20px;
+        border-radius: 3px;
+        transition: all 0.2s ease;
+
+        &:hover{
+            transform: translateY(-8px);
+        }
+
+        &:nth-child(2) {
+            background-color: #4181ee;
+        }
+
+        &:last-child {
+            background-color: #673ab7;
+        }
+    }
+}
+
+.card_image{
+    width: 90%;
+    margin: 0 auto;
+    img{
+        width: 100%;
+    }
+}
+
+.card_info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .card_price {
+        background-color: #555;
+        color: #fff;
+        border: none;
+        border-radius: 20px;
+        padding: 5px 20px;
+        cursor: pointer;
+    }
+}
